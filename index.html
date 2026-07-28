@@ -3,547 +3,834 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fine Grain Millwork — Custom Kitchens & Millwork, Barrie ON</title>
+<title>Fine Grain Millwork — Custom Cabinetry &amp; Millwork, Barrie ON</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --black: #0b0a09;
-    --charcoal: #161412;
-    --charcoal-2: #1e1b18;
-    --stone: #ede7dc;
-    --stone-dim: #cfc7b8;
-    --gold: #d4af37;
-    --gold-soft: #e8cd7a;
-    --bronze: #8c6a3c;
-    --hair: rgba(212,175,55,0.28);
-    --serif: 'Cinzel', serif;
-    --sans: 'Montserrat', sans-serif;
+    --gold:#D4AF37;
+    --black:#0D0D0D;
+    --charcoal:#1A1A1A;
+    --stone:#EDE7DC;
+    --bronze:#BCA33C;
+    --line:#33302a;
+    --max:1200px;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
+  *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
   body{
     background:var(--black);
     color:var(--stone);
-    font-family:var(--sans);
-    font-weight:300;
-    overflow-x:hidden;
+    font-family:'Montserrat', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--gold);color:var(--black);}
-
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
   .eyebrow{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:0.32em;
+    font-family:'Montserrat', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.18em;
     text-transform:uppercase;
     color:var(--gold);
-    font-weight:500;
   }
-  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:0.02em;color:var(--stone);}
-  .rule{
-    width:44px;height:1px;background:var(--gold);margin:18px 0;
+  h1,h2,h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+    color:var(--stone);
   }
-  .rule.center{margin:18px auto;}
+  p{color:#c9c2b3;}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  section{padding:110px 0;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:40px; margin-bottom:56px; border-bottom:1px solid var(--line);
+    padding-bottom:26px; flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(28px,3.4vw,42px);}
+  .section-head p{max-width:36ch; font-size:14.5px;}
+  .divider{width:60px; height:2px; background:var(--gold); margin:14px 0;}
 
-  /* ===== Grain line signature motif ===== */
-  #grainline{
-    position:fixed;
-    left:0; top:0;
-    width:1px;
-    height:100vh;
-    z-index:5;
-    pointer-events:none;
-  }
-  #grainline svg{width:120px;height:100%;overflow:visible;}
-  .grain-path{
-    fill:none;
-    stroke:var(--gold);
-    stroke-width:1;
-    opacity:0.35;
-  }
-  @media (max-width: 900px){ #grainline{display:none;} }
-
-  /* ===== Nav ===== */
+  /* ---------- NAV ---------- */
   header{
-    position:fixed; top:0; left:0; right:0;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:26px 60px;
-    z-index:100;
-    mix-blend-mode:normal;
-    background:linear-gradient(to bottom, rgba(11,10,9,0.85), transparent);
-    transition:padding .3s ease, background .3s ease;
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    background:rgba(13,13,13,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
   }
-  header .mark{
-    display:flex; align-items:center; gap:12px;
-    font-family:var(--serif); letter-spacing:0.08em; font-size:15px;
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:78px;}
+  .logo{display:flex; align-items:center; gap:12px;}
+  .logo-mark{
+    font-family:'Cinzel', serif; font-weight:700; color:var(--gold);
+    font-size:15px; letter-spacing:-0.04em; line-height:1;
+    border:1px solid var(--gold); width:38px; height:38px;
+    display:flex; align-items:center; justify-content:center;
   }
-  header .mark .fg{
-    font-size:22px; color:var(--gold); font-weight:600;
+  .logo-text{font-family:'Cinzel', serif; font-size:15px; letter-spacing:0.04em; color:var(--stone); line-height:1.3;}
+  .logo-text small{display:block; font-size:9px; letter-spacing:0.3em; color:var(--gold); font-family:'Montserrat',sans-serif; font-weight:600;}
+  .navlinks{display:flex; gap:32px; list-style:none;}
+  .navlinks a{font-size:13px; text-decoration:none; letter-spacing:0.04em; position:relative; padding-bottom:3px;}
+  .navlinks a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width 0.3s ease;}
+  .navlinks a:hover::after{width:100%;}
+  .navcta{
+    font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    background:var(--gold); color:var(--black); padding:12px 22px; text-decoration:none;
+    transition:background 0.25s ease;
   }
-  nav{display:flex; gap:44px;}
-  nav a{
-    font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
-    color:var(--stone-dim); position:relative; padding-bottom:4px;
+  .navcta:hover{background:var(--bronze);}
+  .navtoggle{display:none; background:none; border:none; color:var(--stone); font-size:24px; cursor:pointer;}
+  @media (max-width:900px){
+    .navlinks{display:none;}
+    .navcta{display:none;}
+    .navtoggle{display:block;}
   }
-  nav a::after{
-    content:''; position:absolute; left:0; bottom:0; width:0; height:1px;
-    background:var(--gold); transition:width .35s ease;
-  }
-  nav a:hover::after{width:100%;}
-  nav a:hover{color:var(--stone);}
-  .book-btn{
-    border:1px solid var(--gold); color:var(--gold);
-    padding:10px 22px; font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
-    transition:all .35s ease;
-  }
-  .book-btn:hover{background:var(--gold); color:var(--black);}
-  @media (max-width:900px){ nav{display:none;} header{padding:20px 24px;} }
 
-  /* ===== Hero ===== */
+  /* ---------- HERO ---------- */
   .hero{
-    min-height:100vh;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center;
-    position:relative;
-    padding:120px 24px 80px;
-    background:
-      radial-gradient(ellipse 60% 50% at 50% 20%, rgba(212,175,55,0.06), transparent 70%),
-      linear-gradient(180deg, #0b0a09 0%, #0e0c0a 60%, #0b0a09 100%);
-    isolation:isolate;
+    position:relative; min-height:100vh; display:flex; align-items:flex-end;
+    padding-top:78px; overflow:hidden;
   }
-  .hero::before{
-    content:'';
-    position:absolute; inset:0; z-index:-1;
-    background-image:
-      repeating-linear-gradient(100deg, transparent 0 60px, rgba(212,175,55,0.018) 60px 61px, transparent 61px 140px),
-      repeating-linear-gradient(96deg, transparent 0 90px, rgba(140,106,60,0.02) 90px 92px, transparent 92px 190px);
-    opacity:.9;
+  .hero-bg{
+    position:absolute; inset:0; z-index:0;
+    background-image:linear-gradient(to top, rgba(13,13,13,0.97) 5%, rgba(13,13,13,0.55) 55%, rgba(13,13,13,0.35) 100%), url('assets/storefront.png');
+    background-size:cover; background-position:center 30%;
   }
-  .hero-mono{
-    font-family:var(--serif);
-    font-size:clamp(70px,11vw,150px);
-    line-height:0.85;
-    color:var(--gold);
-    letter-spacing:0.02em;
-    font-weight:600;
-    opacity:0;
-    animation:riseIn 1.3s .2s ease forwards;
+  .hero-inner{position:relative; z-index:1; padding-bottom:90px;}
+  .hero h1{font-size:clamp(38px,6.4vw,80px); line-height:1.08; max-width:16ch; margin:18px 0 22px;}
+  .hero h1 span{color:var(--gold);}
+  .hero p.lead{font-size:17px; max-width:50ch; margin-bottom:32px;}
+  .hero-actions{display:flex; align-items:center; gap:26px; flex-wrap:wrap;}
+  .btn{
+    font-size:12.5px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    padding:16px 30px; text-decoration:inline-block; display:inline-block; transition:all 0.25s ease; cursor:pointer; border:1px solid transparent;
   }
-  .hero-word{
-    font-family:var(--serif);
-    font-size:clamp(30px,5.4vw,64px);
-    letter-spacing:0.14em;
-    margin-top:6px;
-    opacity:0;
-    animation:riseIn 1.3s .5s ease forwards;
-  }
-  .hero-sub{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:0.4em;
-    text-transform:uppercase;
-    color:var(--stone-dim);
-    margin-top:14px;
-    opacity:0;
-    animation:riseIn 1.3s .75s ease forwards;
-  }
-  .hero-tag{
-    max-width:480px;
-    margin:34px auto 0;
-    font-size:16px;
-    font-weight:300;
-    line-height:1.7;
-    color:var(--stone-dim);
-    font-style:italic;
-    opacity:0;
-    animation:riseIn 1.3s 1s ease forwards;
-  }
-  .hero-cta{
-    margin-top:44px;
-    display:flex; gap:18px; flex-wrap:wrap; justify-content:center;
-    opacity:0;
-    animation:riseIn 1.3s 1.2s ease forwards;
-  }
-  .btn-primary{
-    background:var(--gold); color:var(--black);
-    padding:15px 34px; font-size:11px; letter-spacing:0.24em; text-transform:uppercase;
-    font-weight:600;
-    transition:all .35s ease;
-    box-shadow:0 0 0 rgba(212,175,55,0);
-  }
-  .btn-primary:hover{box-shadow:0 8px 30px rgba(212,175,55,0.25); transform:translateY(-2px);}
-  .btn-ghost{
-    border:1px solid rgba(237,231,220,0.3); color:var(--stone);
-    padding:15px 34px; font-size:11px; letter-spacing:0.24em; text-transform:uppercase;
-    transition:all .35s ease;
-  }
-  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+  .btn-gold{background:var(--gold); color:var(--black);}
+  .btn-gold:hover{background:var(--bronze);}
+  .btn-outline{border-color:var(--gold); color:var(--gold); background:transparent;}
+  .btn-outline:hover{background:var(--gold); color:var(--black);}
 
-  @keyframes riseIn{
-    from{opacity:0; transform:translateY(22px);}
-    to{opacity:1; transform:translateY(0);}
-  }
+  /* ---------- INTRO ---------- */
+  .intro{border-bottom:1px solid var(--line);}
+  .intro .wrap{max-width:820px; text-align:center;}
+  .intro p{font-size:19px; color:var(--stone); line-height:1.7;}
 
-  .scroll-cue{
-    position:absolute; bottom:38px; left:50%; transform:translateX(-50%);
-    font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--stone-dim);
-    display:flex; flex-direction:column; align-items:center; gap:10px;
-    opacity:0; animation:riseIn 1s 1.6s ease forwards;
-  }
-  .scroll-cue .line{width:1px; height:34px; background:linear-gradient(var(--gold),transparent); animation:pulse 2s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
+  /* ---------- WHY US ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .why-card{background:var(--charcoal); padding:36px 26px; text-align:left;}
+  .why-icon{width:36px; height:36px; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; margin-bottom:20px;}
+  .why-icon svg{width:18px; height:18px; stroke:var(--gold); fill:none; stroke-width:1.5;}
+  .why-card h3{font-family:'Montserrat',sans-serif; font-weight:600; font-size:15px; letter-spacing:0.03em; text-transform:uppercase; color:var(--stone); margin-bottom:8px;}
+  .why-card p{font-size:13.5px; color:#a49c8c;}
 
-  /* ===== Section shell ===== */
-  section{position:relative; padding:140px 60px;}
-  @media (max-width:900px){ section{padding:90px 24px;} }
-  .section-inner{max-width:1180px; margin:0 auto;}
-  .reveal{opacity:0; transform:translateY(28px); transition:opacity .9s ease, transform .9s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
+  /* ---------- FEATURED / PROJECT CARDS ---------- */
+  .card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .project-card{background:var(--charcoal); border:1px solid var(--line); overflow:hidden; transition:transform 0.3s ease, border-color 0.3s ease;}
+  .project-card:hover{transform:translateY(-4px); border-color:var(--gold);}
+  .project-card .tex-wrap{aspect-ratio:4/3; position:relative; overflow:hidden;}
+  .project-card .tex-wrap svg{width:100%; height:100%;}
+  .project-card .body{padding:22px 24px 26px;}
+  .project-card .cat{font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; display:block;}
+  .project-card h3{font-family:'Cinzel',serif; font-size:19px; font-weight:600; margin-bottom:10px;}
+  .project-card p{font-size:13.5px; margin-bottom:14px;}
+  .project-meta{display:flex; flex-direction:column; gap:6px; font-size:12px; color:#8a8172; border-top:1px solid var(--line); padding-top:14px;}
+  .project-meta b{color:var(--stone); font-weight:600;}
 
-  /* ===== Story ===== */
-  .story{
-    background:var(--charcoal);
-    border-top:1px solid var(--hair);
-    border-bottom:1px solid var(--hair);
+  /* ---------- PROJECTS FILTER ---------- */
+  .filter-bar{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:48px;}
+  .filter-btn{
+    background:transparent; border:1px solid var(--line); color:#a49c8c; font-family:'Montserrat',sans-serif;
+    font-size:12px; letter-spacing:0.06em; text-transform:uppercase; padding:10px 18px; cursor:pointer; transition:all 0.2s ease;
   }
-  .story-grid{
-    display:grid; grid-template-columns:0.9fr 1.1fr; gap:90px; align-items:center;
-  }
-  @media (max-width:900px){ .story-grid{grid-template-columns:1fr; gap:40px;} }
-  .story h2{font-size:clamp(30px,3.6vw,44px); line-height:1.25;}
-  .story p{font-size:15px; line-height:1.95; color:var(--stone-dim); font-weight:300; max-width:46ch;}
-  .story p + p{margin-top:18px;}
-  .values{
-    display:grid; grid-template-columns:1fr 1fr; gap:36px 30px; margin-top:50px;
-  }
-  .value{border-left:1px solid var(--hair); padding-left:18px;}
-  .value .num{font-family:var(--serif); color:var(--gold); font-size:13px; letter-spacing:0.1em;}
-  .value h4{font-family:var(--sans); font-size:13px; letter-spacing:0.12em; text-transform:uppercase; font-weight:500; margin:8px 0 6px; color:var(--stone);}
-  .value p{font-size:13px; color:var(--stone-dim); line-height:1.7; margin:0;}
+  .filter-btn:hover{border-color:var(--gold); color:var(--stone);}
+  .filter-btn.active{background:var(--gold); border-color:var(--gold); color:var(--black); font-weight:600;}
+  .project-card[data-cat]{display:none;}
+  .project-card[data-cat].show{display:flex; flex-direction:column;}
 
-  .monogram-frame{
-    aspect-ratio:4/5; border:1px solid var(--hair);
-    display:flex; align-items:center; justify-content:center; position:relative;
-    background:
-      radial-gradient(circle at 30% 20%, rgba(212,175,55,0.08), transparent 60%),
-      linear-gradient(160deg, #1a1712, #0d0c0a);
-  }
-  .monogram-frame::before,.monogram-frame::after{
-    content:''; position:absolute; width:26px; height:26px; border:1px solid var(--gold); opacity:.6;
-  }
-  .monogram-frame::before{top:-1px; left:-1px; border-right:none; border-bottom:none;}
-  .monogram-frame::after{bottom:-1px; right:-1px; border-left:none; border-top:none;}
-  .monogram-frame span{font-family:var(--serif); font-size:110px; color:var(--gold); font-weight:600;}
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .service-card{background:var(--black); padding:34px 28px;}
+  .service-card .num{font-family:'Cinzel',serif; color:var(--bronze); font-size:13px; margin-bottom:16px; display:block;}
+  .service-card h3{font-family:'Cinzel',serif; font-size:18px; margin-bottom:10px;}
+  .service-card p{font-size:13.5px;}
 
-  /* ===== Process (real sequence) ===== */
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start;}
+  .about-copy p{font-size:15px; margin-bottom:18px;}
+  .values-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:10px;}
+  .value-item h4{font-family:'Cinzel',serif; font-size:15px; color:var(--gold); margin-bottom:6px;}
+  .value-item p{font-size:13px;}
+  .team-card{border-top:1px solid var(--line); padding-top:24px; margin-top:36px;}
+  .team-card .name{font-family:'Cinzel',serif; font-size:17px; color:var(--stone);}
+  .team-card .role{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-top:2px;}
+
+  /* ---------- PROCESS ---------- */
   .process-list{display:flex; flex-direction:column;}
-  .process-item{
-    display:grid; grid-template-columns:120px 1fr; gap:40px;
-    padding:38px 0; border-top:1px solid var(--hair); align-items:start;
-  }
-  .process-item:last-child{border-bottom:1px solid var(--hair);}
-  .process-item .num{font-family:var(--serif); font-size:34px; color:var(--gold); font-weight:500;}
-  .process-item h3{font-size:20px; margin-bottom:8px;}
-  .process-item p{font-size:14px; line-height:1.8; color:var(--stone-dim); max-width:60ch; font-weight:300;}
-  @media (max-width:700px){.process-item{grid-template-columns:60px 1fr; gap:20px;}}
+  .process-item{display:grid; grid-template-columns:70px 1fr 1.5fr; gap:28px; padding:30px 0; border-top:1px solid var(--line); align-items:baseline;}
+  .process-item:last-child{border-bottom:1px solid var(--line);}
+  .process-num{font-family:'Cinzel', serif; font-size:15px; color:var(--gold);}
+  .process-item h3{font-size:19px; font-weight:600;}
+  .process-item p{font-size:13.5px; max-width:56ch;}
 
-  /* ===== Materials ===== */
-  .materials{background:var(--charcoal);}
-  .mat-strip{display:grid; grid-template-columns:repeat(5,1fr); gap:0; height:260px; margin-top:50px; border:1px solid var(--hair);}
-  .mat{position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:18px; transition:flex .4s ease;}
-  .mat span{font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--stone); z-index:2; text-shadow:0 2px 8px rgba(0,0,0,.6);}
-  .mat::before{content:''; position:absolute; inset:0; transition:transform .6s ease;}
-  .mat:hover::before{transform:scale(1.08);}
-  .mat.m1::before{background:linear-gradient(160deg,#5a3d24,#3a2716);}
-  .mat.m2::before{background:linear-gradient(160deg,#2a2015,#171009);}
-  .mat.m3::before{background:linear-gradient(160deg,#26221d,#151310);}
-  .mat.m4::before{background:linear-gradient(160deg,#ded4bf,#b7a988);}
-  .mat.m5::before{background:linear-gradient(160deg,#8c6a3c,#5f4726);}
-  @media (max-width:700px){.mat-strip{grid-template-columns:repeat(2,1fr); height:auto;} .mat{height:130px;}}
+  /* ---------- MATERIALS ---------- */
+  .materials-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:60px;}
+  .swatch{background:var(--charcoal); padding:26px 20px 20px; min-height:190px; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden;}
+  .swatch .grain{position:absolute; inset:0;}
+  .swatch .name{font-family:'Cinzel', serif; font-size:16px; position:relative; z-index:1; margin-bottom:3px;}
+  .swatch .tone{font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#e7e0cf; position:relative; z-index:1;}
+  .hw-row{display:flex; gap:1px; background:var(--line); border:1px solid var(--line); flex-wrap:wrap;}
+  .hw-item{flex:1; min-width:150px; background:var(--black); padding:22px; text-align:center;}
+  .hw-item .name{font-family:'Cinzel',serif; font-size:15px; color:var(--gold);}
+  .hw-item .tag{font-size:11px; color:#8a8172; margin-top:4px; letter-spacing:0.05em; text-transform:uppercase;}
 
-  /* ===== Services ===== */
-  .services-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-    margin-top:50px; background:var(--hair);
-  }
-  .service{
-    background:var(--black); padding:46px 34px; min-height:260px;
-    display:flex; flex-direction:column; justify-content:space-between;
-    transition:background .4s ease;
-  }
-  .service:hover{background:#121110;}
-  .service h3{font-size:19px; margin-bottom:14px;}
-  .service p{font-size:13.5px; color:var(--stone-dim); line-height:1.8; font-weight:300;}
-  .service .icon{width:30px; height:30px; margin-bottom:22px;}
-  @media (max-width:900px){.services-grid{grid-template-columns:1fr;}}
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--line);}
+  .gallery-item{aspect-ratio:1; position:relative; overflow:hidden; background:var(--charcoal);}
+  .gallery-item svg{width:100%; height:100%;}
+  .gallery-item .tag{position:absolute; bottom:0; left:0; right:0; padding:12px 14px; background:linear-gradient(to top, rgba(13,13,13,0.85), transparent); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--stone);}
 
-  /* ===== Quote ===== */
-  .quote{
-    text-align:center; padding:160px 24px;
-    background:linear-gradient(180deg,#0b0a09,#141210 50%,#0b0a09);
-    border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
-  }
-  .quote blockquote{
-    font-family:var(--serif); font-size:clamp(22px,3vw,34px); line-height:1.6;
-    max-width:800px; margin:0 auto; color:var(--stone); font-weight:500;
-  }
-  .quote cite{display:block; margin-top:26px; font-style:normal; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold);}
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .testi-card{background:var(--charcoal); border:1px solid var(--line); padding:32px 28px;}
+  .testi-stars{color:var(--gold); font-size:14px; letter-spacing:2px; margin-bottom:16px;}
+  .testi-card p{font-style:italic; font-size:14.5px; color:var(--stone); margin-bottom:20px;}
+  .testi-name{font-size:13px; font-weight:600; color:var(--gold); letter-spacing:0.03em;}
+  .testi-role{font-size:11.5px; color:#8a8172; margin-top:2px;}
 
-  /* ===== Contact ===== */
-  .contact{background:var(--charcoal);}
-  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:100px;}
-  @media (max-width:900px){.contact-grid{grid-template-columns:1fr; gap:50px;}}
-  .contact h2{font-size:clamp(28px,3.4vw,40px); margin-bottom:20px;}
-  .contact p.lead{color:var(--stone-dim); font-size:15px; line-height:1.8; max-width:44ch; margin-bottom:36px;}
-  .info-row{display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--hair);}
-  .info-row:last-child{border-bottom:1px solid var(--hair);}
-  .info-row .k{font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); width:110px; flex-shrink:0; padding-top:2px;}
-  .info-row .v{font-size:14px; color:var(--stone); font-weight:300; line-height:1.6;}
+  /* ---------- FAQ ---------- */
+  .faq-item{border-top:1px solid var(--line); padding:6px 0;}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    cursor:pointer; list-style:none; padding:22px 0; font-family:'Cinzel',serif; font-size:16px; color:var(--stone);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+'; color:var(--gold); font-size:22px; font-family:'Montserrat',sans-serif; transition:transform 0.25s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{padding-bottom:24px; font-size:14px; max-width:70ch;}
 
-  form{display:flex; flex-direction:column; gap:22px;}
-  .field{position:relative;}
-  .field input, .field textarea{
-    width:100%; background:transparent; border:none; border-bottom:1px solid var(--hair);
-    color:var(--stone); font-family:var(--sans); font-weight:300; font-size:14px;
-    padding:12px 2px; outline:none; transition:border-color .3s ease;
-  }
-  .field textarea{resize:vertical; min-height:90px;}
-  .field input::placeholder, .field textarea::placeholder{color:#71675a;}
-  .field input:focus, .field textarea:focus{border-color:var(--gold);}
-  .field label{
-    position:absolute; top:-18px; left:0; font-size:10px; letter-spacing:0.18em;
-    text-transform:uppercase; color:var(--stone-dim);
-  }
-  .submit-btn{
-    margin-top:10px; align-self:flex-start;
-    background:var(--gold); color:var(--black); border:none;
-    padding:15px 36px; font-family:var(--sans); font-size:11px; letter-spacing:0.24em;
-    text-transform:uppercase; font-weight:600; cursor:pointer; transition:all .3s ease;
-  }
-  .submit-btn:hover{background:var(--gold-soft); transform:translateY(-2px);}
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{background:var(--gold); color:var(--black); text-align:center;}
+  .cta-banner h2{color:var(--black); font-size:clamp(26px,3.4vw,38px); margin-bottom:18px;}
+  .cta-banner p{color:#3a2f10; max-width:56ch; margin:0 auto 30px;}
+  .cta-banner .btn-outline{border-color:var(--black); color:var(--black);}
+  .cta-banner .btn-outline:hover{background:var(--black); color:var(--gold);}
 
-  /* ===== Footer ===== */
-  footer{
-    padding:60px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  .field{margin-bottom:22px;}
+  .field label{display:block; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold); margin-bottom:8px;}
+  .field input, .field select, .field textarea{
+    width:100%; background:transparent; border:none; border-bottom:1px solid var(--line);
+    color:var(--stone); font-family:'Montserrat',sans-serif; font-size:15px; padding:10px 2px;
   }
-  footer .fmark{font-family:var(--serif); color:var(--gold); font-size:18px; letter-spacing:0.06em;}
-  footer .small{font-size:11px; color:var(--stone-dim); letter-spacing:0.05em;}
-  footer .flinks{display:flex; gap:30px;}
-  footer .flinks a{font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--stone-dim);}
-  footer .flinks a:hover{color:var(--gold);}
-  @media (max-width:700px){footer{padding:40px 24px; flex-direction:column; text-align:center;}}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-bottom-color:var(--gold);}
+  .field textarea{resize:vertical; min-height:80px;}
+  .contact-info .rows{display:flex; flex-direction:column; gap:0; margin-top:6px;}
+  .contact-info .row{display:flex; justify-content:space-between; gap:20px; border-top:1px solid var(--line); padding:16px 0; font-size:14px;}
+  .contact-info .row span:first-child{font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold); flex-shrink:0;}
+  .contact-info .row span:last-child{text-align:right; color:var(--stone);}
+  .map-embed{margin-top:28px; border:1px solid var(--line); filter:grayscale(1) invert(0.92) contrast(0.9);}
+  .map-embed iframe{width:100%; height:220px; border:0; display:block;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--charcoal); border-top:1px solid var(--line); padding:70px 0 0;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px;}
+  .footer-col h4{font-family:'Montserrat',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:18px;}
+  .footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .footer-col a{font-size:13.5px; text-decoration:none; color:#c9c2b3;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-brand p{font-size:13px; max-width:32ch; margin-top:14px; color:#8a8172;}
+  .social-row{display:flex; gap:14px; margin-top:18px;}
+  .social-row a{width:32px; height:32px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; text-decoration:none;}
+  .social-row a:hover{border-color:var(--gold); color:var(--gold);}
+  .footer-bottom{border-top:1px solid var(--line); padding:24px 0; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:#8a8172; flex-wrap:wrap; gap:12px;}
+  .footer-bottom a{text-decoration:none; color:#8a8172;}
+  .footer-bottom a:hover{color:var(--gold);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    .why-grid, .services-grid{grid-template-columns:repeat(2,1fr);}
+    .card-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;}
+    .materials-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .process-item{grid-template-columns:44px 1fr;}
+    .process-item p{grid-column:2/3;}
+  }
+  @media (max-width:560px){
+    .why-grid, .services-grid, .card-grid, .materials-grid, .gallery-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    section{padding:70px 0;}
+  }
 </style>
 </head>
 <body>
 
-<div id="grainline"><svg viewBox="0 0 120 1000" preserveAspectRatio="none">
-  <path class="grain-path" d="M60,0 C70,80 40,160 65,240 C85,310 35,380 60,460 C80,530 42,600 60,680 C75,750 45,820 60,900 C68,950 55,980 60,1000" />
-  <path class="grain-path" d="M40,0 C50,90 20,170 42,250 C58,320 15,390 38,470 C55,540 22,610 38,690 C50,760 25,830 38,910 C44,955 35,985 38,1000" style="opacity:0.18" />
-</svg></div>
-
-<header id="siteHeader">
-  <div class="mark"><span class="fg">FG</span><span>FINE GRAIN</span></div>
-  <nav>
-    <a href="#story">Our Craft</a>
-    <a href="#process">Process</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#home" style="text-decoration:none;">
+      <span class="logo-mark">FG</span>
+      <span class="logo-text">FINE GRAIN<small>MILLWORK</small></span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="navcta" href="#contact">Get a Quote</a>
+    <button class="navtoggle" onclick="document.getElementById('mobilenav').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
   </nav>
-  <a href="#contact" class="book-btn">Book a Consultation</a>
+  <div id="mobilenav" style="display:none; flex-direction:column; background:var(--black); border-top:1px solid var(--line); padding:20px 32px;">
+    <a href="#home" style="padding:10px 0; text-decoration:none;">Home</a>
+    <a href="#projects" style="padding:10px 0; text-decoration:none;">Projects</a>
+    <a href="#services" style="padding:10px 0; text-decoration:none;">Services</a>
+    <a href="#about" style="padding:10px 0; text-decoration:none;">About</a>
+    <a href="#process" style="padding:10px 0; text-decoration:none;">Process</a>
+    <a href="#contact" style="padding:10px 0; text-decoration:none;">Contact</a>
+    <a href="#contact" class="btn btn-gold" style="text-align:center; margin-top:10px;">Get a Quote</a>
+  </div>
 </header>
-
-<section class="hero">
-  <div class="hero-mono">FG</div>
-  <div class="hero-word">FINE GRAIN</div>
-  <div class="hero-sub">Millwork &amp; Custom Kitchens</div>
-  <p class="hero-tag">Every cabinet, every seam, every surface — crafted for the homes of those who notice the details others miss.</p>
-  <div class="hero-cta">
-    <a href="#contact" class="btn-primary">Begin Your Kitchen</a>
-    <a href="#services" class="btn-ghost">View Our Work</a>
-  </div>
-  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
-</section>
-
-<section class="story" id="story">
-  <div class="section-inner story-grid reveal">
-    <div class="monogram-frame"><span>FG</span></div>
-    <div>
-      <p class="eyebrow">Our Brand</p>
-      <h2>Luxury is never loud.<br>It's in the joinery.</h2>
-      <div class="rule"></div>
-      <p>Fine Grain Millwork is a custom millwork house dedicated to exceptional craftsmanship, premium materials, and timeless design. Based in Barrie, Ontario, we build kitchens and cabinetry that are meant to be lived with for generations, not renovated again in ten years.</p>
-      <p>We believe true luxury lives in the details — meticulously crafted, thoughtfully designed, and built to last. From concept to installation, we deliver millwork that elevates a space and stands the test of time.</p>
-      <div class="values">
-        <div class="value"><div class="num">01</div><h4>Quality</h4><p>We never compromise on material or method.</p></div>
-        <div class="value"><div class="num">02</div><h4>Craftsmanship</h4><p>Precision in every detail, seen and unseen.</p></div>
-        <div class="value"><div class="num">03</div><h4>Integrity</h4><p>Honest service, reliable results, every time.</p></div>
-        <div class="value"><div class="num">04</div><h4>Timeless</h4><p>Designs built to endure changing trends.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="section-inner reveal">
-    <p class="eyebrow">How We Build</p>
-    <h2 style="font-size:clamp(28px,3.4vw,42px); margin-top:14px; max-width:16ch;">A kitchen, taken from concept to grain.</h2>
-    <div class="process-list">
-      <div class="process-item">
-        <div class="num">01</div>
-        <div><h3>Design Consultation</h3><p>We walk your space, understand how you cook, host, and live — then translate that into a design that fits both your home and your life.</p></div>
-      </div>
-      <div class="process-item">
-        <div class="num">02</div>
-        <div><h3>Material Selection</h3><p>Walnut, white oak, ash, quartz, brass — every material is chosen by hand for grain, tone, and how it will age in your light.</p></div>
-      </div>
-      <div class="process-item">
-        <div class="num">03</div>
-        <div><h3>Custom Fabrication</h3><p>Built in our Barrie workshop by joiners who measure twice and finish by hand. No laminate shortcuts, no filler.</p></div>
-      </div>
-      <div class="process-item">
-        <div class="num">04</div>
-        <div><h3>Precision Install</h3><p>Our own crew installs every piece — level, seamless, and finished on site so the kitchen feels built into the house, not added to it.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="materials">
-  <div class="section-inner reveal">
-    <p class="eyebrow">Material Palette</p>
-    <h2 style="font-size:clamp(26px,3vw,36px); margin-top:14px;">Chosen for grain, not for trend.</h2>
-    <div class="mat-strip">
-      <div class="mat m1"><span>Walnut</span></div>
-      <div class="mat m2"><span>Rich Black</span></div>
-      <div class="mat m3"><span>Charcoal Oak</span></div>
-      <div class="mat m4"><span>Honed Stone</span></div>
-      <div class="mat m5"><span>Bronze Hardware</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="section-inner reveal">
-    <p class="eyebrow">What We Build</p>
-    <h2 style="font-size:clamp(28px,3.4vw,42px); margin-top:14px; max-width:18ch;">Millwork for every room worth getting right.</h2>
-    <div class="services-grid">
-      <div class="service">
-        <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1"><rect x="3" y="6" width="18" height="14" /><path d="M3 10h18M9 20V6" /></svg>
-          <h3>Custom Kitchens</h3>
-        </div>
-        <p>Full kitchen design and fabrication — cabinetry, islands, hoods, and built-in storage tailored to your floor plan.</p>
-      </div>
-      <div class="service">
-        <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1"><path d="M4 21V7l8-4 8 4v14" /><path d="M9 21v-7h6v7" /></svg>
-          <h3>Millwork &amp; Built-Ins</h3>
-        </div>
-        <p>Bookcases, window seats, mudroom benches, wine walls — architectural millwork woven into the bones of your home.</p>
-      </div>
-      <div class="service">
-        <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1"><rect x="4" y="3" width="16" height="18" rx="1" /><path d="M8 3v18M16 3v18" /></svg>
-          <h3>Custom Closets</h3>
-        </div>
-        <p>Walk-in and reach-in systems built to your wardrobe, not the other way around — in the same materials as your kitchen.</p>
-      </div>
-      <div class="service">
-        <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1"><path d="M3 12h18M12 3v18" /><circle cx="12" cy="12" r="9" /></svg>
-          <h3>Vanities &amp; Baths</h3>
-        </div>
-        <p>Floating and furniture-style vanities finished to match the tone and hardware of the rest of the home.</p>
-      </div>
-      <div class="service">
-        <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1"><path d="M12 2l2.5 7h7l-5.5 4.5 2 7L12 16l-6 4.5 2-7L2.5 9h7z" /></svg>
-          <h3>Refinishing</h3>
-        </div>
-        <p>Bring an existing kitchen back to life — new fronts, new hardware, new finish, same footprint, a fraction of the cost.</p>
-      </div>
-      <div class="service">
-        <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1"><rect x="3" y="4" width="18" height="16" rx="1" /><path d="M3 9h18" /></svg>
-          <h3>Commercial Millwork</h3>
-        </div>
-        <p>Reception desks, retail fixtures, and office cabinetry for businesses that want their space to feel as considered as ours.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="quote">
-  <div class="reveal">
-    <blockquote>"They didn't just build our kitchen. They understood exactly how we live in it before they cut a single board."</blockquote>
-    <cite>Barrie, Ontario Homeowner</cite>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="section-inner contact-grid reveal">
-    <div>
-      <p class="eyebrow">Start Your Project</p>
-      <h2>Let's design something<br>built to last.</h2>
-      <p class="lead">Tell us about your space and we'll arrange a consultation at your home or our Barrie workshop.</p>
-      <div class="info-row"><div class="k">Studio</div><div class="v">322 King Street, Unit 4<br>Barrie, ON L4N 6L2</div></div>
-      <div class="info-row"><div class="k">Phone</div><div class="v">416-801-1810</div></div>
-      <div class="info-row"><div class="k">Email</div><div class="v">anuram@finegrainmillwork.com</div></div>
-      <div class="info-row"><div class="k">Founder</div><div class="v">Anuram Anton, Founder &amp; Director</div></div>
-    </div>
-    <form onsubmit="event.preventDefault(); this.querySelector('.submit-btn').innerText='Request Sent';">
-      <div class="field"><label>Name</label><input type="text" placeholder="Your full name" required></div>
-      <div class="field"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
-      <div class="field"><label>Project</label><input type="text" placeholder="Kitchen, closet, built-in..."></div>
-      <div class="field"><label>Tell us about your space</label><textarea placeholder="Room size, timeline, style you love..."></textarea></div>
-      <button type="submit" class="submit-btn">Request Consultation</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="fmark">FG · FINE GRAIN MILLWORK</div>
-  <div class="flinks">
-    <a href="#story">Our Craft</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="small">© 2026 Fine Grain Millwork. All rights reserved.</div>
-</footer>
-
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
-  }, {threshold:0.15});
-  reveals.forEach(r=>io.observe(r));
-
-  // Header background on scroll
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', ()=>{
-    if(window.scrollY > 40){
-      header.style.background = 'rgba(11,10,9,0.92)';
-      header.style.backdropFilter = 'blur(10px)';
-      header.style.borderBottom = '1px solid rgba(212,175,55,0.15)';
-    } else {
-      header.style.background = 'linear-gradient(to bottom, rgba(11,10,9,0.85), transparent)';
-      header.style.backdropFilter = 'none';
-      header.style.borderBottom = 'none';
-    }
-  });
-
-  // Grain line subtle parallax with scroll
-  const grainSvg = document.querySelector('#grainline svg');
-  window.addEventListener('scroll', ()=>{
-    const y = window.scrollY * 0.08;
-    grainSvg.style.transform = `translateY(${-y}px)`;
+  document.querySelector('.navtoggle').addEventListener('click', function(){
+    var m = document.getElementById('mobilenav');
+    m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
   });
 </script>
+
+<!-- ============ HOME / HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Custom Millwork &amp; Cabinetry — Barrie, ON</span>
+    <h1>Luxury is in <span>the details.</span></h1>
+    <p class="lead">Fine Grain Millwork designs and builds custom kitchens, closets, wall units and commercial millwork — meticulously crafted, thoughtfully designed, and built to last.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#contact">Request a Quote</a>
+      <a class="btn btn-outline" href="#projects">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="intro">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block; text-align:center;">Our Approach</span>
+    <p style="margin-top:18px;">We believe true luxury is in the details — meticulously crafted, thoughtfully designed, and built to endure. From concept to installation, Fine Grain Millwork delivers custom cabinetry and millwork that elevates every space it's built for.</p>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Why Choose Us</span><h2 style="margin-top:10px;">Built on four things we won't compromise on</h2></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 12h18M12 3v18"/></svg></div>
+        <h3>Custom Millwork</h3>
+        <p>Crafted with precision, to your exact space — nothing off a shelf.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+        <h3>Premium Materials</h3>
+        <p>Real hardwoods and trusted hardware brands, built to last for decades.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Attention to Detail</h3>
+        <p>Down to the grain — every joint, reveal, and finish is considered.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-8h6v8"/></svg></div>
+        <h3>Residential &amp; Commercial</h3>
+        <p>Designed for your space — homes, offices, and commercial builds alike.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS (home preview) ============ -->
+<section style="background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Featured Work</span><h2 style="margin-top:10px;">A few recent builds</h2></div>
+      <p>Every project below links to more detail in our full portfolio.</p>
+    </div>
+    <div class="card-grid">
+      <div class="project-card">
+        <div class="tex-wrap">
+          <svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="225" fill="#4B3226"/>
+            <g stroke="#3a2519" stroke-width="1.3" opacity="0.6" fill="none">
+              <path d="M-20 40 Q150 20 320 50"/><path d="M-20 90 Q150 75 320 105"/>
+              <path d="M-20 140 Q150 128 320 158"/><path d="M-20 190 Q150 180 320 210"/>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="cat">Kitchens</span>
+          <h3>Walnut &amp; Brass Kitchen</h3>
+          <p>Full custom kitchen with waterfall island and hand-finished walnut fronts.</p>
+          <div class="project-meta"><span><b>Materials:</b> Walnut, solid brass hardware</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="tex-wrap">
+          <svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="225" fill="#cba875"/>
+            <g stroke="#a9895c" stroke-width="1.2" opacity="0.6" fill="none">
+              <path d="M-20 30 Q150 12 320 40"/><path d="M-20 78 Q150 65 320 92"/>
+              <path d="M-20 126 Q150 116 320 144"/><path d="M-20 175 Q150 168 320 198"/>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="cat">Walk-In Closets</span>
+          <h3>White Oak Wardrobe Suite</h3>
+          <p>Floor-to-ceiling built-ins with integrated lighting and soft-close drawers.</p>
+          <div class="project-meta"><span><b>Materials:</b> White Oak, Blum hardware</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="tex-wrap">
+          <svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="225" fill="#1A1A1A"/>
+            <g stroke="#3a3629" stroke-width="1.2" opacity="0.7" fill="none">
+              <path d="M-20 35 L320 45"/><path d="M-20 80 L320 92"/>
+              <path d="M-20 128 L320 142"/><path d="M-20 175 L320 190"/>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="cat">Entertainment Units</span>
+          <h3>Rift Oak Media Wall</h3>
+          <p>Built-in wall unit with concealed cable management and float-mounted shelving.</p>
+          <div class="project-meta"><span><b>Materials:</b> Rift Oak, matte black steel</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Have a space in mind?</h2>
+    <p>Tell us about your project and we'll set up a time to measure, talk materials, and put together a quote.</p>
+    <a class="btn btn-outline" href="#contact">Request a Quote</a>
+  </div>
+</section>
+
+<!-- ============ PROJECTS (full portfolio) ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Our Portfolio</span><h2 style="margin-top:10px;">Projects by category</h2></div>
+      <p>Filter by room type, or browse everything below.</p>
+    </div>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="kitchens">Kitchens</button>
+      <button class="filter-btn" data-filter="closets">Walk-In Closets</button>
+      <button class="filter-btn" data-filter="entertainment">Entertainment Units</button>
+      <button class="filter-btn" data-filter="offices">Home Offices</button>
+      <button class="filter-btn" data-filter="vanities">Vanities</button>
+      <button class="filter-btn" data-filter="mudrooms">Mudrooms</button>
+      <button class="filter-btn" data-filter="commercial">Commercial Millwork</button>
+      <button class="filter-btn" data-filter="furniture">Custom Furniture</button>
+    </div>
+    <div class="card-grid" id="projectGrid">
+      <div class="project-card" data-cat="kitchens">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#cba875"/>
+          <g stroke="#a9895c" stroke-width="1.2" opacity="0.6" fill="none"><path d="M-20 35 Q150 18 320 45"/><path d="M-20 82 Q150 70 320 98"/><path d="M-20 130 Q150 120 320 150"/><path d="M-20 178 Q150 170 320 200"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Kitchens</span>
+          <h3>Modern White Oak Kitchen</h3>
+          <p>Full-height white oak cabinetry with a quartz waterfall island and integrated appliance panels.</p>
+          <div class="project-meta"><span><b>Materials:</b> White Oak, Quartz, Blum hardware</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card" data-cat="closets">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#4B3226"/>
+          <g stroke="#3a2519" stroke-width="1.3" opacity="0.6" fill="none"><path d="M-20 45 Q150 25 320 55"/><path d="M-20 95 Q150 80 320 110"/><path d="M-20 145 Q150 135 320 165"/><path d="M-20 195 Q150 185 320 215"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Walk-In Closets</span>
+          <h3>His &amp; Hers Walk-In Closet</h3>
+          <p>Walnut-faced wardrobe wall with glass-front display cabinetry and brass detailing.</p>
+          <div class="project-meta"><span><b>Materials:</b> Walnut, brass hardware, glass</span><span><b>Location:</b> Innisfil, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card" data-cat="entertainment">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#1A1A1A"/>
+          <g stroke="#3a3629" stroke-width="1.2" opacity="0.7" fill="none"><path d="M-20 40 L320 50"/><path d="M-20 85 L320 97"/><path d="M-20 130 L320 144"/><path d="M-20 178 L320 195"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Entertainment Units</span>
+          <h3>Floating Media Wall</h3>
+          <p>Rift oak wall unit with concealed cable runs and a float-mounted TV panel.</p>
+          <div class="project-meta"><span><b>Materials:</b> Rift Oak, matte black steel</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card" data-cat="offices">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#EDE7DC"/>
+          <g stroke="#c7bfab" stroke-width="1.2" opacity="0.7" fill="none"><path d="M-20 40 Q150 25 320 50"/><path d="M-20 90 Q150 78 320 105"/><path d="M-20 140 Q150 130 320 158"/><path d="M-20 188 Q150 180 320 205"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Home Offices</span>
+          <h3>Built-In Office Library</h3>
+          <p>Painted MDF shelving and cabinetry with white oak accents and a hidden pull-out desk.</p>
+          <div class="project-meta"><span><b>Materials:</b> Painted MDF, White Oak</span><span><b>Location:</b> Orillia, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card" data-cat="vanities">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#4B3226"/>
+          <g stroke="#3a2519" stroke-width="1.3" opacity="0.6" fill="none"><path d="M-20 35 Q150 20 320 42"/><path d="M-20 80 Q150 68 320 95"/><path d="M-20 125 Q150 115 320 148"/><path d="M-20 172 Q150 165 320 198"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Vanities</span>
+          <h3>Double Vanity, Marble Top</h3>
+          <p>Floating walnut double vanity with quartz countertop and integrated brass pulls.</p>
+          <div class="project-meta"><span><b>Materials:</b> Walnut, Quartz, brass hardware</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card" data-cat="mudrooms">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#EDE7DC"/>
+          <g stroke="#c7bfab" stroke-width="1.2" opacity="0.7" fill="none"><path d="M-20 42 L320 52"/><path d="M-20 88 L320 100"/><path d="M-20 134 L320 148"/><path d="M-20 180 L320 196"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Mudrooms</span>
+          <h3>Mudroom Lockers &amp; Bench</h3>
+          <p>Painted locker-style storage with a solid bench top and hooks for a busy family entryway.</p>
+          <div class="project-meta"><span><b>Materials:</b> Painted MDF, Richelieu hardware</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card" data-cat="commercial">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#1A1A1A"/>
+          <g stroke="#3a3629" stroke-width="1.2" opacity="0.7" fill="none"><path d="M-20 38 Q150 22 320 46"/><path d="M-20 84 Q150 72 320 100"/><path d="M-20 130 Q150 120 320 152"/><path d="M-20 178 Q150 170 320 202"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Commercial Millwork</span>
+          <h3>Retail Millwork Fit-Out</h3>
+          <p>Custom display cases, reception desk, and feature wall for a retail storefront build-out.</p>
+          <div class="project-meta"><span><b>Materials:</b> Laminate, Rift Oak veneer</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+      <div class="project-card" data-cat="furniture">
+        <div class="tex-wrap"><svg viewBox="0 0 300 225" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="300" height="225" fill="#cba875"/>
+          <g stroke="#a9895c" stroke-width="1.2" opacity="0.6" fill="none"><path d="M-20 40 Q150 24 320 48"/><path d="M-20 88 Q150 76 320 105"/><path d="M-20 136 Q150 126 320 158"/><path d="M-20 184 Q150 176 320 208"/></g>
+        </svg></div>
+        <div class="body">
+          <span class="cat">Custom Furniture</span>
+          <h3>Solid Walnut Dining Table</h3>
+          <p>Live-edge inspired dining table with breadboard ends and a hand-rubbed oil finish.</p>
+          <div class="project-meta"><span><b>Materials:</b> Solid Walnut</span><span><b>Location:</b> Barrie, ON</span></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12.5px; color:#8a8172; margin-top:20px;">Sample projects shown above — replace with real photography and details as jobs are completed.</p>
+  </div>
+</section>
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('#filterBar .filter-btn');
+    var cards = document.querySelectorAll('#projectGrid .project-card');
+    function applyFilter(f){
+      cards.forEach(function(c){
+        var show = (f === 'all' || c.getAttribute('data-cat') === f);
+        c.classList.toggle('show', show);
+        c.style.display = show ? 'flex' : 'none';
+      });
+    }
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){
+        buttons.forEach(function(x){x.classList.remove('active');});
+        b.classList.add('active');
+        applyFilter(b.getAttribute('data-filter'));
+      });
+    });
+    applyFilter('all');
+  })();
+</script>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" style="background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">What We Offer</span><h2 style="margin-top:10px;">Services</h2></div>
+      <p>From first sketch to final install, every stage is handled in-house.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="num">01</span><h3>Custom Kitchens</h3><p>Full kitchen design and build, from layout through hardware.</p></div>
+      <div class="service-card"><span class="num">02</span><h3>Built-In Cabinetry</h3><p>Wall-to-wall storage and millwork fit to your space exactly.</p></div>
+      <div class="service-card"><span class="num">03</span><h3>Closets &amp; Wardrobes</h3><p>Walk-in and reach-in systems with real wood fronts and finishes.</p></div>
+      <div class="service-card"><span class="num">04</span><h3>Bathroom Vanities</h3><p>Floating and freestanding vanities in your choice of species and stone.</p></div>
+      <div class="service-card"><span class="num">05</span><h3>Wall Units &amp; Entertainment</h3><p>Media walls, shelving, and feature walls built around your space.</p></div>
+      <div class="service-card"><span class="num">06</span><h3>Commercial Millwork</h3><p>Reception desks, retail fixtures, and office fit-outs.</p></div>
+      <div class="service-card"><span class="num">07</span><h3>Office Cabinetry</h3><p>Home office and workspace storage, built-in desks and shelving.</p></div>
+      <div class="service-card"><span class="num">08</span><h3>Design &amp; Manufacturing</h3><p>In-house design and shop production — one team, start to finish.</p></div>
+      <div class="service-card"><span class="num">09</span><h3>Installation</h3><p>Delivered and installed by the people who built it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <span class="eyebrow">Our Story</span>
+      <h2 style="margin:12px 0 22px; font-size:clamp(26px,3.2vw,36px);">About Fine Grain Millwork</h2>
+      <p>Fine Grain Millwork is a custom millwork company dedicated to exceptional craftsmanship, premium materials, and timeless design. We believe true luxury is in the details — meticulously crafted, thoughtfully designed, and built to last.</p>
+      <p>From concept to installation, we deliver millwork that elevates spaces and stands the test of time. Every project starts as rough lumber and ends as furniture built for the room it lives in — not a stock size trimmed to fit.</p>
+      <div class="team-card">
+        <div class="name">Anuram Anton</div>
+        <div class="role">Founder &amp; Director</div>
+      </div>
+    </div>
+    <div>
+      <div class="values-grid">
+        <div class="value-item"><h4>Quality</h4><p>We never compromise.</p></div>
+        <div class="value-item"><h4>Craftsmanship</h4><p>Precision in every detail.</p></div>
+        <div class="value-item"><h4>Integrity</h4><p>Honest service, reliable results.</p></div>
+        <div class="value-item"><h4>Timeless</h4><p>Designs that endure.</p></div>
+      </div>
+      <div class="tex-wrap" style="margin-top:36px; aspect-ratio:4/3; border:1px solid var(--line);">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="400" height="300" fill="#1A1A1A"/>
+          <g stroke="#3a3629" stroke-width="1" opacity="0.6" fill="none">
+            <path d="M-20 40 Q200 20 420 45"/><path d="M-20 80 Q200 65 420 90"/>
+            <path d="M-20 120 Q200 108 420 135"/><path d="M-20 160 Q200 150 420 180"/>
+            <path d="M-20 200 Q200 192 420 222"/><path d="M-20 240 Q200 232 420 262"/>
+          </g>
+        </svg>
+      </div>
+      <p style="font-size:12px; color:#8a8172; margin-top:10px;">Shop photos coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">How It Works</span><h2 style="margin-top:10px;">Our Process</h2></div>
+      <p>Seven stages, start to finish. Nothing skipped, nothing outsourced.</p>
+    </div>
+    <div class="process-list">
+      <div class="process-item"><span class="process-num">01</span><h3>Consultation</h3><p>We talk through your vision, budget, and timeline — in person or over a call.</p></div>
+      <div class="process-item"><span class="process-num">02</span><h3>Site Measure</h3><p>Precise on-site measurements so every piece is built to fit exactly.</p></div>
+      <div class="process-item"><span class="process-num">03</span><h3>Design</h3><p>Layout, elevations, and 3D renderings so you can see the space before we build it.</p></div>
+      <div class="process-item"><span class="process-num">04</span><h3>Material Selection</h3><p>Choose species, finish, and hardware — you approve the actual materials.</p></div>
+      <div class="process-item"><span class="process-num">05</span><h3>Manufacturing</h3><p>Milling, joinery, and finishing, done in-house in our Barrie shop.</p></div>
+      <div class="process-item"><span class="process-num">06</span><h3>Installation</h3><p>Delivered and installed on site by our own team.</p></div>
+      <div class="process-item"><span class="process-num">07</span><h3>Final Walkthrough</h3><p>We walk the finished space with you to make sure every detail is right.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATERIALS & FINISHES ============ -->
+<section id="materials" style="background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">What You Can Choose</span><h2 style="margin-top:10px;">Materials &amp; Finishes</h2></div>
+      <p>Every project starts with the species, panel, and hardware you choose.</p>
+    </div>
+    <div class="materials-grid">
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#4B3226"/><g stroke="#3a2519" stroke-width="1.3" opacity="0.55" fill="none"><path d="M-20 25 Q150 10 320 30"/><path d="M-20 55 Q150 42 320 62"/><path d="M-20 88 Q150 76 320 95"/><path d="M-20 120 Q150 110 320 132"/><path d="M-20 155 Q150 145 320 168"/></g></svg><div class="name">Walnut</div><div class="tone">Dark, warm, tight grain</div></div>
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#cba875"/><g stroke="#a9895c" stroke-width="1.2" opacity="0.6" fill="none"><path d="M-20 22 Q150 8 320 28"/><path d="M-20 50 Q150 38 320 58"/><path d="M-20 80 Q150 70 320 88"/><path d="M-20 112 Q150 102 320 122"/><path d="M-20 148 Q150 138 320 165"/></g></svg><div class="name">White Oak</div><div class="tone">Light, open, ray-fleck</div></div>
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#8a6b45"/><g stroke="#6b5030" stroke-width="1.4" opacity="0.55" fill="none"><path d="M-20 18 L320 26"/><path d="M-20 45 L320 55"/><path d="M-20 75 L320 87"/><path d="M-20 105 L320 118"/><path d="M-20 140 L320 155"/></g></svg><div class="name">Rift Oak</div><div class="tone">Straight, linear grain</div></div>
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#EDE7DC"/></svg><div class="name" style="color:#1A1A1A;">Painted MDF</div><div class="tone" style="color:#4a453a;">Smooth, matte or satin</div></div>
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#1A1A1A"/><rect x="0" y="0" width="300" height="190" fill="url(#glossgrad)"/><defs><linearGradient id="glossgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3a3a3a"/><stop offset="50%" stop-color="#1A1A1A"/><stop offset="100%" stop-color="#3a3a3a"/></linearGradient></defs></svg><div class="name">High Gloss</div><div class="tone">Reflective, seamless finish</div></div>
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#3a3630"/></svg><div class="name">AGT Panels</div><div class="tone">Durable, low-maintenance</div></div>
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#5a5348"/></svg><div class="name">Laminates</div><div class="tone">Wide range of colours</div></div>
+      <div class="swatch"><svg class="grain" viewBox="0 0 300 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="300" height="190" fill="#d8d3c8"/></svg><div class="name" style="color:#1A1A1A;">Quartz</div><div class="tone" style="color:#4a453a;">Countertops &amp; islands</div></div>
+    </div>
+    <span class="eyebrow" style="display:block; margin-bottom:20px;">Hardware Brands We Trust</span>
+    <div class="hw-row">
+      <div class="hw-item"><div class="name">Blum</div><div class="tag">Hinges &amp; Slides</div></div>
+      <div class="hw-item"><div class="name">Hettich</div><div class="tag">Hardware Systems</div></div>
+      <div class="hw-item"><div class="name">Salice</div><div class="tag">Hinges</div></div>
+      <div class="hw-item"><div class="name">Richelieu</div><div class="tag">Hardware &amp; Fittings</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">A Closer Look</span><h2 style="margin-top:10px;">Gallery</h2></div>
+      <p>Shop photos, installs, and finished work — replace with real photography as it comes in.</p>
+    </div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><svg viewBox="0 0 300 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#4B3226"/><g stroke="#3a2519" stroke-width="1.3" opacity="0.55" fill="none"><path d="M-20 40 Q150 20 320 50"/><path d="M-20 90 Q150 75 320 105"/><path d="M-20 140 Q150 128 320 158"/><path d="M-20 190 Q150 180 320 210"/><path d="M-20 240 Q150 232 320 262"/></g></svg><div class="tag">Finished Project</div></div>
+    <div class="gallery-item"><svg viewBox="0 0 300 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#1A1A1A"/><g stroke="#3a3629" stroke-width="1.2" opacity="0.7" fill="none"><path d="M-20 40 L320 52"/><path d="M-20 90 L320 104"/><path d="M-20 140 L320 156"/><path d="M-20 190 L320 208"/><path d="M-20 240 L320 260"/></g></svg><div class="tag">Shop Photo</div></div>
+    <div class="gallery-item"><svg viewBox="0 0 300 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#cba875"/><g stroke="#a9895c" stroke-width="1.2" opacity="0.6" fill="none"><path d="M-20 35 Q150 18 320 45"/><path d="M-20 85 Q150 72 320 100"/><path d="M-20 135 Q150 124 320 155"/><path d="M-20 185 Q150 176 320 208"/><path d="M-20 235 Q150 228 320 258"/></g></svg><div class="tag">Installation</div></div>
+    <div class="gallery-item"><svg viewBox="0 0 300 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#EDE7DC"/><g stroke="#c7bfab" stroke-width="1.2" opacity="0.7" fill="none"><path d="M-20 40 Q150 25 320 50"/><path d="M-20 90 Q150 78 320 105"/><path d="M-20 140 Q150 130 320 158"/><path d="M-20 190 Q150 180 320 205"/><path d="M-20 240 Q150 230 320 258"/></g></svg><div class="tag">Before &amp; After</div></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" style="background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Client Feedback</span><h2 style="margin-top:10px;">Testimonials</h2></div>
+      <p>Google, builder, and designer reviews — add your first as jobs wrap up.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Add your first client review here — a short quote about the finished project and the experience working with us."</p>
+        <div class="testi-name">Client Name</div>
+        <div class="testi-role">Homeowner — Google Review</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Add a builder or contractor review here — speaks to reliability, communication, and quality of finished millwork."</p>
+        <div class="testi-name">Builder Name</div>
+        <div class="testi-role">General Contractor</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Add an interior designer review here — speaks to design collaboration and how the millwork elevated the space."</p>
+        <div class="testi-name">Designer Name</div>
+        <div class="testi-role">Interior Designer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap" style="max-width:900px;">
+    <div class="section-head">
+      <div><span class="eyebrow">Questions</span><h2 style="margin-top:10px;">Frequently Asked</h2></div>
+    </div>
+    <div>
+      <details class="faq-item"><summary>How much does custom cabinetry cost?</summary><p>Full custom kitchens typically run from $15,000 to $40,000+, depending on size, materials, and hardware. Smaller projects like vanities or media walls are priced individually — we'll give you a clear quote after the initial consultation and site measure.</p></details>
+      <details class="faq-item"><summary>How long does it take?</summary><p>Timelines depend on project scope, but most full kitchens move from design approval to installation over several weeks in the shop, followed by on-site installation. We'll give you a specific timeline once your design and materials are finalized.</p></details>
+      <details class="faq-item"><summary>Do you design everything?</summary><p>Yes — design and manufacturing are handled in-house, from layout and elevations through 3D renderings, so you see the space before we build it.</p></details>
+      <details class="faq-item"><summary>Do you install?</summary><p>Yes. Every project is delivered and installed by our own team — not a third-party installer — so anything that needs adjusting on site gets handled by the people who built it.</p></details>
+      <details class="faq-item"><summary>What areas do you service?</summary><p>We're based in Barrie, Ontario, and serve the surrounding region. Get in touch with your location and we'll confirm whether it's within our service area.</p></details>
+      <details class="faq-item"><summary>What warranties do you offer?</summary><p>We stand behind our workmanship and materials. Ask us during your consultation for the specific warranty terms that apply to your project.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="background:var(--charcoal); border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Get In Touch</span><h2 style="margin-top:10px;">Request a Quote</h2></div>
+      <p>Tell us about your space and we'll set up a time to measure and talk material.</p>
+    </div>
+    <div class="contact-grid">
+      <form onsubmit="event.preventDefault(); window.location.href='mailto:anuram@finegrainmillwork.com?subject=New%20Project%20Inquiry&body=' + encodeURIComponent('Name: ' + this.name.value + '\nEmail: ' + this.email.value + '\nPhone: ' + this.phone.value + '\nProject Type: ' + this.projecttype.value + '\nDetails: ' + this.details.value);">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+        <div class="field">
+          <label for="projecttype">Project Type</label>
+          <select id="projecttype" name="projecttype">
+            <option>Kitchen</option><option>Walk-In Closet</option><option>Entertainment Unit</option>
+            <option>Home Office</option><option>Vanity</option><option>Mudroom</option>
+            <option>Commercial Millwork</option><option>Custom Furniture</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="details">Tell us about your project</label><textarea id="details" name="details" rows="4"></textarea></div>
+        <button class="btn btn-gold" type="submit" style="border:none; cursor:pointer;">Send Inquiry</button>
+      </form>
+      <div class="contact-info">
+        <span class="eyebrow">Contact Details</span>
+        <div class="rows">
+          <div class="row"><span>Email</span><span>anuram@finegrainmillwork.com</span></div>
+          <div class="row"><span>Phone</span><span>416-801-1810</span></div>
+          <div class="row"><span>Address</span><span>322 King Street, Unit 4,<br>Barrie, ON L4N 6L2</span></div>
+          <div class="row"><span>Hours</span><span>Mon–Fri: 9am–5pm<br>Shop visits by appointment</span></div>
+        </div>
+        <div class="map-embed">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=322+King+Street+Unit+4+Barrie+ON+L4N+6L2&output=embed" title="Fine Grain Millwork location map"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">FG</span>
+          <span class="logo-text">FINE GRAIN<small>MILLWORK</small></span>
+        </div>
+        <p>Custom cabinetry and millwork, designed and built in Barrie, Ontario.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#materials">Materials</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:anuram@finegrainmillwork.com">anuram@finegrainmillwork.com</a></li>
+          <li><a href="tel:4168011810">416-801-1810</a></li>
+          <li><a href="#contact">Request a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fine Grain Millwork. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
